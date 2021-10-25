@@ -1,4 +1,4 @@
-const { ObjectId } = require('mongodb');
+const { ObjectID } = require('mongodb');
 const connection = require('./connection');
 
 getAll = async () => {
