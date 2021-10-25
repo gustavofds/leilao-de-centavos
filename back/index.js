@@ -4,9 +4,7 @@ const Product = require ('./models/Product');
 
 const app = express();
 const server = require('http').createServer(app);
-
 app.use(cors());
-
 const io = require('socket.io')(server, {
   cors: {
     origin: 'http://localhost:3000',
@@ -18,11 +16,8 @@ io.on('connection', (socket) =>  {
   console.log(`Conexão- ${socket.id}`);
 });
 
-const corsOptions = {
-  origin: 'http://localhost:3000',
-};
 
-app.use(cors(corsOptions));
+
 
 app.get('/products', async (req, res) => {
   const products = await Product.getAll();

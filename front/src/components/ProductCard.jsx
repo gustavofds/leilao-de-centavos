@@ -1,7 +1,7 @@
 import { Card, Button } from 'react-bootstrap';
 const {io} = require('socket.io-client')
 
-const socket = io('http://localhost/3001')
+const socket = io('http://localhost:3001')
 
 function ProductCard({ product: {_id, nomeProduto, precoDeArremate, lanceAtual, arrematado, img} }) {
 function onClick() {
