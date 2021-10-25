@@ -12,7 +12,7 @@ getAll = async () => {
 getById = async (id) => {
   const db = await connection();
 
-  const product = await db.collection('products').findOne({ _id: ObjectId(id) });
+  const product = await db.collection('products').findOne({ _id: ObjectID(id) });
 
   return product;
 };
