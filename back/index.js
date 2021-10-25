@@ -16,6 +16,12 @@ const io = require('socket.io')(server, {
 
 io.on('connection', (socket) =>  {
   console.log(`Conexão- ${socket.id}`);
+
+  socket.on('bid', async (_id) => {
+    await Product.addBid(_id);
+    const updatedProduct = await Product.getById(_id);
+    io.emit('updateBids', updatedProduct);
+  });
 });
 
 const corsOptions = {
