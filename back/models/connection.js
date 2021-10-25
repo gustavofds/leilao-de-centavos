@@ -14,7 +14,7 @@ function connection() {
     ? Promise.resolve(db)
     : mongodb.MongoClient.connect(MONGO_DB_URL, OPTIONS)
       .then((conn) => {
-        db = conn.db('StoreManager');
+        db = conn.db('leilao-de-centavos');
         return db;
       })
       .catch((err) => {
