@@ -6,7 +6,9 @@ const server = require('http').createServer(app);
 
 app.use(cors());
 
+app.get('/products', async (req, res) => {
 
+});
 
 
 
